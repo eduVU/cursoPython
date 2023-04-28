@@ -6,12 +6,12 @@ Los resultados se entregan al módulo principal según corresponda.
 def sumar(valores):
     sumatoria = 0
     for i in range(len(valores)):
-        sumatoria += int(valores[i])
+        sumatoria += int(valores[i])  # Suma todos los valores de la lista.
     return sumatoria
 
-# Esta función realiza la resta del minuendo y sustraendo.
+# Esta función realiza la resta entre minuendo y sustraendo.
 def restar(valores):
-    if len(valores) != 2:
+    if len(valores) != 2:  # Comprueba que se hayan recibido exactamente dos números, si no da un error.
         raise ValueError
     diferencia = int(valores[0]) - int(valores[1])
     return diferencia
@@ -25,9 +25,9 @@ def multiplicar(valores):
 
 # Esta función se encarga de realizar la división entre dos números enteros.
 def dividir(valores):
-    if len(valores) != 2:
+    if len(valores) != 2:  # Comprueba que se hayan recibido exactamente dos números, si no da un error.
         raise ValueError
-    elif int(valores[1]) == 0:
+    elif int(valores[1]) == 0:  # En caso de que el divisor sea cero da un error.
         raise ValueError
     else:
         cociente = int(valores[0])/int(valores[1])
@@ -48,9 +48,9 @@ def calcular_factorial(n):
     
 # Esta función calcula una potencia dada una base y un exponente.
 def calcular_potencia(valores):
-    if len(valores) != 2:
+    if len(valores) != 2:  # Comprueba que se hayan recibido exactamente dos números, si no da un error.
         raise ValueError
-    elif int(valores[0]) == 0 and int(valores[1]) == 0:
+    elif int(valores[0]) == 0 and int(valores[1]) == 0:  # Si la potencia es 0**0 da un error.
         raise ValueError
     else:
         potencia = int(valores[0])**int(valores[1])

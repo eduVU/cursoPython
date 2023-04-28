@@ -23,7 +23,7 @@ Potencia: calcula la potencia que se obtiene al usar los dos números dados en u
 La potencia 0**0 no es permitida pues genera una forma indeterminada.
 
 El menú de ayuda o la opción de salir siempre están disponibles desde el menú principal.
-Por favor revise que no ingrese espacios en blanco a la hora de seleccionar una opción o ingresar números.\n
+Por favor revise que no ingrese espacios en blanco adicionales a la hora de seleccionar una opción o ingresar números.\n
 """
     print(ayuda)
 

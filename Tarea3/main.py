@@ -1,5 +1,6 @@
 """ Módulo principal del programa. Este módulo interactúa con el usuario por medio de la terminal, recibe los datos del usuario, llama
-a todas las funciones de los otros módulos para realizar las operaciones necesarias y entrega los resultados finales.
+a todas las funciones de los otros módulos para realizar las operaciones necesarias, entregar los resultados finales y mostrar los
+mensajes de error cuando es necesario.
 """
 
 import aritmetica
@@ -15,7 +16,7 @@ opciones = ("suma", "resta", "mult", "div", "factorial", "potencia", "ayuda", "s
 while True:
     modo = input('Ingrese la operación que desea realizar (suma/resta/mult/div/factorial/potencia): ')
     
-    # Se verifica que la opción escogida sea válida y se opera según corresponda.
+    # Se verifica que la opción escogida sea válida y se opera según corresponda para cada opción.
     if modo.lower() not in opciones:
         outputs.notificar_error_menu()
         continue
@@ -28,8 +29,8 @@ while True:
         # se hacen las operaciones matemáticas, se utiliza try/except para filtrar entradas que no sean números enteros o valores indeseados.
         try:
             if modo.lower() == 'suma':
-                sumandos = input('Ingrese los números que desea sumar separados por un espacio: ').split(" ")
-                resultado = aritmetica.sumar(sumandos)
+                elementos = input('Ingrese los números que desea sumar separados por un espacio: ').split(" ")  # Crea una lista con cada uno de los valores dados.
+                resultado = aritmetica.sumar(elementos)
                 print("Resultado de la suma: {}".format(resultado))
                 outputs.escribir_archivo(modo.upper(), resultado)
             elif modo.lower() == 'resta':
