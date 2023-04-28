@@ -19,4 +19,4 @@ A continuación se describe cada una de las operaciones:
 
 El menú de ayuda o la opción de salir siempre están disponibles desde el menú principal.
 
-Por favor revise que no ingrese espacios en blanco adicionales a la hora de seleccionar una opción o ingresar números.\n
+Por favor revise que no ingrese espacios en blanco adicionales a la hora de seleccionar una opción o ingresar números.
