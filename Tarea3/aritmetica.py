@@ -11,6 +11,8 @@ def sumar(valores):
 
 # Esta función realiza la resta del minuendo y sustraendo.
 def restar(valores):
+    if len(valores) != 2:
+        raise ValueError
     diferencia = int(valores[0]) - int(valores[1])
     return diferencia
 
@@ -23,8 +25,10 @@ def multiplicar(valores):
 
 # Esta función se encarga de realizar la división entre dos números enteros.
 def dividir(valores):
-    if int(valores[1]) == 0:
-        print('Error: no se puede realizar una división entre cero pues genera un resultado indeterminado.')
+    if len(valores) != 2:
+        raise ValueError
+    elif int(valores[1]) == 0:
+        raise ValueError
     else:
         cociente = int(valores[0])/int(valores[1])
         return cociente
@@ -32,9 +36,8 @@ def dividir(valores):
 # Esta función calcula el factorial de un número entero dado.
 def calcular_factorial(n):
     factorial = 1  # Se inicializa la variable con el valor cuando n=0.
-
     if n < 0:  # Se verifica que n no sea negativo.
-        print('ERROR: el valor ingresado no es válido. Ingrese un número entero positivo.')
+        raise ValueError
     elif n == 0:  # Se comprueba si n=0, en ese caso 0!=1.
         return factorial
     else:  # Se calcula n! para el resto de casos.
@@ -45,8 +48,10 @@ def calcular_factorial(n):
     
 # Esta función calcula una potencia dada una base y un exponente.
 def calcular_potencia(valores):
-    if int(valores[0]) == 0 and int(valores[1]) == 0:
-        print('Error: la potencia 0**0 genera un resultado indeterminado.')
+    if len(valores) != 2:
+        raise ValueError
+    elif int(valores[0]) == 0 and int(valores[1]) == 0:
+        raise ValueError
     else:
         potencia = int(valores[0])**int(valores[1])
         return potencia
