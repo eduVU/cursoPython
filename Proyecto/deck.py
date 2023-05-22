@@ -1,5 +1,4 @@
-import random, time
-import estadisticas as est
+import random
 
 # Componentes de cada carta: un palo y un valor.
 palos = ('\u2764', '\u2666', '\u2660', '\u2618')

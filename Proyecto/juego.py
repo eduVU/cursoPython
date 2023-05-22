@@ -2,9 +2,9 @@ import time
 import deck
 import estadisticas as est
 
-# Diccionario con puntaje para cada carta dentro del juego según su valor.
-puntos = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
-          '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+# # Diccionario con puntaje para cada carta dentro del juego según su valor.
+# puntos = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
+#           '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
 class Juego():
     def __init__(self, jugadores):
@@ -12,7 +12,7 @@ class Juego():
         self.puntos = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, 
                        '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
         
-        # Baraja del juego
+        # Baraja del juego.
         self.mazo = deck.Baraja()
         self.mazo.barajar() # Siempre se mezcla la baraja.
 
@@ -47,7 +47,6 @@ class Juego():
               "Dealer.\n")
         self.dealer.mostrar_cartas("", modo="dealer")
         self.evaluar_dealer(modo="oculto")
-
         time.sleep(1)
 
     # Esta función cuenta los puntos en la mano del jugador.
@@ -55,7 +54,7 @@ class Juego():
         puntaje = 0
         # Se calcula el puntaje según la mano del jugador.
         for i in range(len(jugador.mano)):
-            puntaje = puntaje + puntos.get(jugador.mano[i].valor)
+            puntaje = puntaje + self.puntos.get(jugador.mano[i].valor)
         return puntaje
 
     # Esta función comprueba el estado de la partida para ccada jugador según su puntaje.
@@ -78,7 +77,7 @@ class Juego():
         estado = ""
         puntaje = self.calcular_puntaje(self.dealer)
         if puntaje > 21:
-            if modo == "revelar": self.dealer.mostrar_cartas()
+            if modo == "revelar": self.dealer.mostrar_cartas()  # Se revela la mano completa del dealer.
             print(f"El puntaje del dealer es {puntaje}, ¡el dealer pierde!")
             estado = "perdedor"
             time.sleep(1)
