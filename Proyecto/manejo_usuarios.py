@@ -12,7 +12,7 @@ def escoger_usuario():
     usuarios = cargar_usuarios()  # Se cargan los usuarios disponibles.
     if len(usuarios) == 0:
         print("No se ha registrado ningún usuario. Registre un nuevo usuario.\n")
-        return 0, "salir"
+        return 0, "repetir"
     else:
         print("Seleccione el usuario:")
         for usuario in usuarios:
@@ -22,7 +22,7 @@ def escoger_usuario():
             return usuario_seleccionado, "ok"
         else: 
             print("El usuario seleccionado no existe.\n")
-            return 0, "salir"
+            return 0, "repetir"
 
 # Rutina lógica para crear nuevos usuarios.
 def crear_usuario():
@@ -31,7 +31,7 @@ def crear_usuario():
     # Se verifica si el usuario ya existe.
     if usuario_nuevo in usuarios:  
         print("El usuario seleccionado ya existe.\n")
-        return 0, "salir"
+        return 0, "repetir"
     else:
         file = open("usuarios.txt", "a")
         file.write(f"{usuario_nuevo}\n")
