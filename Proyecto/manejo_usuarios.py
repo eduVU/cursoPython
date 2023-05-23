@@ -1,3 +1,5 @@
+import os
+
 # Esta función accede al archivo de usuarios y muestra su contenido.
 def cargar_usuarios():
     file = open('usuarios.txt', 'r')
@@ -5,6 +7,7 @@ def cargar_usuarios():
     for line in file:
         usuarios.append(line.rstrip('\n'))  # Elimina el salto de línea.
     file.close()
+
     return usuarios
 
 # Rutina lógica para elegir un usuario del registro existente.
@@ -17,7 +20,9 @@ def escoger_usuario():
         print("Seleccione el usuario:")
         for usuario in usuarios:
             print(usuario)
+        print("\n")
         usuario_seleccionado = input("")
+        os.system("cls")
         if usuario_seleccionado in usuarios:
             return usuario_seleccionado, "ok"
         else: 
@@ -36,5 +41,5 @@ def crear_usuario():
         file = open("usuarios.txt", "a")
         file.write(f"{usuario_nuevo}\n")
         file.close()
+        os.system("cls")
         return usuario_nuevo, "ok"
-    

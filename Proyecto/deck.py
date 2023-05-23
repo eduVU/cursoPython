@@ -1,4 +1,4 @@
-import random
+import random, time
 
 # Componentes de cada carta: un palo y un valor.
 palos = ('\u2764', '\u2666', '\u2660', '\u2618')
@@ -46,6 +46,7 @@ class Mano():
             print(f"Mano de {usuario}:")
             print(*self.mano)
             print("\n")
+            time.sleep(1.5)
         if modo == "dealer":
             mano = []
             for i in range(len(self.mano)):
@@ -55,7 +56,8 @@ class Mano():
                     mano.append(self.mano[i])
             print("Mano del dealer:")        
             print(*mano)
-            print("\n")        
+            print("\n")   
+            time.sleep(1.5)     
 
 # --------METODOS PARA OBTENER INFO DEL NAIPE------.
 # print(baraja.baraja[i])  # Obtener una carta de la baraja.

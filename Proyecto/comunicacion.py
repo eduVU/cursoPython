@@ -19,7 +19,11 @@ def menu_usuarios():
             usuario, interruptor = usuarios.escoger_usuario()
             if interruptor == "repetir": continue
             else: break
-        elif menu_usuarios == 3: print("¡Adios!"); interruptor = "salir"; break
+        elif menu_usuarios == 3:
+            print("¡Adios!")
+            usuario = ""
+            interruptor = "salir"
+            break
         else: continue
     return usuario, interruptor
 
@@ -37,7 +41,7 @@ def menu_usuarios2(usuario):
             try:
                 est.ver_estadisticas(usuario); continue
             except FileNotFoundError:
-                print("No hay estadísticas para este usuario.")
+                print("No hay estadísticas para este usuario.\n")
                 continue
         elif menu_jugador == 3: print("¡Adios!"); interruptor = "salir"; break
         else: continue

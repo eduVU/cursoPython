@@ -9,6 +9,7 @@ def crear_estadisticas(usuario, condicion):
     file.close()
 
 # Esta función carga las estadísticas para un usuario dado y las muestra en pantalla.
+# Muestra las 5 partidas más recientes.
 def ver_estadisticas(usuario):
     file = open(f'est_{usuario}.txt', 'r')
     estadisticas = []
@@ -16,7 +17,12 @@ def ver_estadisticas(usuario):
         estadisticas.append(line.rstrip('\n'))  # Elimina el salto de línea.
     file.close()
     if len(estadisticas) == 0: 
-        print("No hay estadísticas para este usuario.")
-    else:
-        for entrada in estadisticas:
-            print(entrada)
+        print("No hay estadísticas para este usuario.\n")
+    elif len(estadisticas) >= 5:
+        for i in range(-1, -6, -1):
+            print(estadisticas[i])
+        print("\n")
+    else: 
+        for i in range(1, len(estadisticas) + 1):
+            print(estadisticas[-i])
+        print("\n")
